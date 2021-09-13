@@ -1,0 +1,25 @@
+
+<div class="container-fluid">
+    <div class="col-md-12">
+        <form *ngIf = "showField == 'enabled'; else giveAlert">
+            Username: <input type="text" class="form-control" name="uname" [(ngModel)]="usernameData"><br>
+
+            Email Id: <input type="email" class="form-control" name="emailid" [(ngModel)]="emailData"><br>
+
+            Address: <textarea class="form-control" name="add" [(ngModel)]="addressData"></textarea><br>
+
+            State: <input type="text" class="form-control" name="state" [(ngModel)]="stateData"><br>
+
+            City: <input type="text" class="form-control" name="city" [(ngModel)]="cityData"><br>
+
+            <button class="btn btn-primary" type="button" (click)="getData()">Add Details</button><br><br>
+        </form> 
+        
+        <ng-template #giveAlert>Currently Service is not reachable,Please Try again Later.</ng-template> 
+
+    </div>
+</div>
+
+
+
+<app-data-display [displayOutput]="data" (showField)="acceptData($event)"></app-data-display>

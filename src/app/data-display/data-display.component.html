@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="col-md-12">
+    <h5>Data Entry Service:</h5>
+        Enabled &nbsp;
+        <input type="radio" name="radioButton" value="enabled" [(ngModel)] = "value" (ngModelChange)="verify()" ><br>
+        Disabled &nbsp;
+        <input type="radio" name="radioButton" value="disabled" [(ngModel)] = "value" (ngModelChange)="verify()" ><br>
+</div>
+</div>
+
+<table class="table table-hover" [hidden]="hideTable">
+    <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Address</th>
+        <th scope="col">State</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let showData of displayOutput" >
+        <td>{{showData.Username}}</td>
+        <td>{{showData.Email}}</td>
+        <td>{{showData.Address}}</td>
+        <td>{{showData.State}}</td>
+        <td>{{showData.City}}</td>
+      </tr>
+    </tbody>
+  </table> 
+
+
+  
